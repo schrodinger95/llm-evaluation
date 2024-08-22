@@ -28,9 +28,13 @@ if __name__ == '__main__':
     with open(os.path.join(output, 'memory_results.json'), 'r', encoding='utf-8') as json_file:
         memory_results = json.load(json_file)
 
+    with open(os.path.join(output, 'latency_results.json'), 'r', encoding='utf-8') as json_file:
+        latency_results = json.load(json_file)
+
     wandb.log({
         **results,
-        **memory_results
+        **memory_results,
+        **latency_results
     })
 
     # Finalize wandb session
