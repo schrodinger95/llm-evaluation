@@ -24,8 +24,8 @@ conda activate /home/rugexu/.conda/envs/nvllm
 ```
 Currently only support testing with `Huggingface` and `vLLM`.
 
-## Model Evaluation
-Run the following command. 
+## Model Performance
+Run the following command line.
 ```
 python eval.py \
     --model_name $MODEL_NAME \
@@ -49,12 +49,12 @@ NCCL_IB_DISABLE=1 NCCL_P2P_DISABLE=1 CUDA_VISIBLE_DEVICES=1 python eval.py \
     --output $OUTPUT_DIRECTORY
 ```
 
-## Model Performance
-Open two command windows. Run the following command in the first window.
+## Model Efficiency
+Open two command line windows. Run the following command line in the first window.
 ```
 python monitor.py benchmark.py $OUTPUT_DIRECTORY
 ```
-Then run the following command in the second window.
+Then run the following command line in the second window.
 ```
 NCCL_IB_DISABLE=1 NCCL_P2P_DISABLE=1 CUDA_VISIBLE_DEVICES=1 python benchmark.py \
     --data_path $DATA_PATH \
@@ -65,7 +65,7 @@ NCCL_IB_DISABLE=1 NCCL_P2P_DISABLE=1 CUDA_VISIBLE_DEVICES=1 python benchmark.py 
 ## Wandb Upload
 In `api_key.py`, replace the key with your own wandb key. 
 
-Then run the following command.
+Then run the following command line.
 ```
 python log.py $OUTPUT_DIRECTORY
 ```
